@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useMovie } from '../../context/movieContext/movieContext'
+import './movie-card.css'
 
 const MovieCard = ({ movie }) => {
   const navigate = useNavigate()
@@ -21,17 +22,25 @@ const MovieCard = ({ movie }) => {
   }
 
   return (
-    <div onClick={() => movieClickHandler(movie.id)}>
-      <img
-        src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
-        alt='poster'
-      />
-      <h1>{movie.title}</h1>
-      {movieState.liked.includes(movie.id) ? (
-        <button onClick={movieUnlikeHandler}>Unlike</button>
+    <div onClick={() => movieClickHandler(movie.id)} className='movie-card'>
+      {movie.poster_path ? (
+        <img
+          src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+          alt='poster'
+        />
       ) : (
-        <button onClick={movieLikeHandler}>Like</button>
+        <div className='no-image'>
+          <h4>{movie.title}</h4>
+          <h4>Image not available</h4>
+        </div>
       )}
+      <div className='card-details'>
+        {movieState.liked.includes(movie.id) ? (
+          <button onClick={movieUnlikeHandler}>Unlike</button>
+        ) : (
+          <button onClick={movieLikeHandler}>Like</button>
+        )}
+      </div>
     </div>
   )
 }

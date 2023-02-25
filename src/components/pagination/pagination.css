@@ -1,0 +1,14 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  margin: 0 auto;
+  width: 40vw;
+}
+
+.pagination > p {
+  padding: 0.2rem;
+  border: 1px solid black;
+  cursor: pointer;
+  margin: 0 auto;
+}

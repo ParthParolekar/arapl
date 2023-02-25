@@ -1,0 +1,59 @@
+.movie-details {
+  width: 80vw;
+  margin: 3rem auto;
+  display: flex;
+}
+
+.no-image {
+  height: 300px;
+  width: 200px;
+  background-color: gray;
+  color: white;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  row-gap: 1rem;
+  margin: 0 2rem;
+  text-align: left;
+}
+
+.backdrop {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 60%,
+    rgba(0, 212, 255, 0) 100%
+  );
+}
+
+.backdrop-img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+  z-index: -2;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 600px) {
+  .movie-details {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .movie-info {
+    margin: 0;
+  }
+}

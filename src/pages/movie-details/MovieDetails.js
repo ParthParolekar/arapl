@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import './movie-details.css'
 import { useParams } from 'react-router-dom'
 import { useMovie } from '../../context/movieContext/movieContext'
 
@@ -40,16 +41,35 @@ const MovieDetails = () => {
       {movie?.success === false && <h1>Movie not found</h1>}
 
       {movie?.title && (
-        <div>
-          <h1>{movie?.title}</h1>
-          <img
-            src={`https://image.tmdb.org/t/p/w200${movie?.poster_path}`}
-            alt={movie?.title}
-          />
-          <h4>{movie?.runtime} minutes</h4>
-          <h4>{movie?.release_date}</h4>
-          <h4>{views}</h4>
-          <p>{movie?.overview}</p>
+        <div className='movie-details'>
+          <div className='backdrop'></div>
+          {movie?.backdrop_path && (
+            <img
+              className='backdrop-img'
+              src={`https://image.tmdb.org/t/p/w500${movie?.backdrop_path}`}
+              alt={movie?.title}
+            />
+          )}
+          <div>
+            {movie?.poster_path ? (
+              <img
+                src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+                alt='poster'
+              />
+            ) : (
+              <div className='no-image'>
+                <h4>{movie?.title}</h4>
+                <h4>Image not available</h4>
+              </div>
+            )}
+          </div>
+          <div className='movie-info'>
+            <h1>{movie?.title}</h1>
+            {movie?.runtime.length > 0 && <h4>{movie?.runtime} minutes</h4>}
+            {movie?.release_date.length > 0 && <h4>{movie?.release_date}</h4>}
+            <h4>Views: {views}</h4>
+            {movie?.overview.length > 0 && <p>{movie?.overview}</p>}
+          </div>
         </div>
       )}
     </div>
