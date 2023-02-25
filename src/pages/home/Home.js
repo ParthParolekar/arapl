@@ -15,7 +15,7 @@ const Home = () => {
     )
     const data = await response.json()
     setMovies(data)
-    console.log(data)
+
     const pages = Array.from(
       { length: Number(data.total_pages) },
       (_, i) => i + 1
@@ -28,8 +28,6 @@ const Home = () => {
       `https://api.themoviedb.org/3/search/movie?api_key=b56058299cbea0093f5ccfb9e43c52a4&language=en-US&query=${search}&page=${page}&include_adult=false`
     )
     const data = await response.json()
-    console.log(data)
-
     setMovies(data)
   }
 

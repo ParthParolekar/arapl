@@ -14,6 +14,25 @@ export const movieReducer = (state, action) => {
         ...state,
         liked: state.liked.filter((id) => id !== action.payload)
       }
+
+    case 'VIEW_MOVIE':
+      const check = state.viewed.filter((movie) => movie.id === action.payload)
+
+      if (check.length <= 0) {
+        return {
+          ...state,
+          viewed: [...state.viewed, { id: action.payload, views: 1 }]
+        }
+      } else {
+        return {
+          ...state,
+          viewed: state.viewed.map((movie) =>
+            movie.id === action.payload
+              ? { ...movie, views: movie.views + 1 }
+              : { ...movie }
+          )
+        }
+      }
     default:
       return state
   }
