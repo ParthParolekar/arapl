@@ -7,8 +7,13 @@
 }
 
 .pagination > p {
-  padding: 0.2rem;
+  padding: 0.6rem;
   border: 1px solid black;
   cursor: pointer;
   margin: 0 auto;
+}
+
+.pagination > p:hover {
+  background-color: black;
+  color: white;
 }
