@@ -7,6 +7,23 @@
   pointer-events: none;
 }
 
+.pagination {
+  display: flex;
+  align-items: center;
+  /* flex-wrap: wrap; */
+  overflow-x: scroll;
+  margin: 0 auto;
+  width: 40vw;
+  /* justify-content: center; */
+}
+
+.pagination > p {
+  padding: 0.2rem;
+  border: 1px solid black;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
