@@ -1,3 +1,20 @@
+# ARAPL Assignment - Movie Search App
+
+## Live: https://movie-search-arapl.netlify.app/
+
+## Features:
+- Accept user input as search input
+- Show Movies based on the user's search input. If movies not found then show error message
+- Pagination to navigate between all the results
+- Like or Unlike a specific movie. Persisted in local storage
+- Users can see the number of times they have viewed a movie on the movie details page. Persisted in local storage
+- Responsive
+ 
+ ## Tech Stack
+ - ReactJS
+ - CSS
+ - React-Router-DOM
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
