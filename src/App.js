@@ -9,7 +9,6 @@ function App() {
   useEffect(() => {
     localStorage.setItem('user', JSON.stringify(movieState))
   }, [movieState, movieState.liked, movieState.viewed])
-  console.log(movieState)
   return (
     <div className='App'>
       <Routes>
